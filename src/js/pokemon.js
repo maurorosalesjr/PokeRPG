@@ -1,5 +1,3 @@
-
-
 export default class Pokemon {
   static getPokemon(number) {
     return new Promise(function (resolve, reject){
@@ -30,6 +28,12 @@ export default class Pokemon {
 //loot
 //charecter selection
 //random pokemon---done
+
+//ui
+//different rooms = different class (hide/show)
+//button(s) to enter new rooms(class hide/show)
+//battle buttons
+//dungeon backgrounds
 
 //https://pokeapi.co/api/v2/pokemon?limit=1126&offset=0
 
@@ -78,14 +82,14 @@ function lootRoll (loot, enemy)
 
 //and gold(score)!
 
-//random pokemon-
-
 
 //charecters-
 //Epicodus student- keyboard taped to a stick, laptop
 //Delivery Driver- ranged pizza slice throwing,
 //Mother- Barbarian, close range
-
+//High School Dropout-
+//Scientist- chemical burn
+//Pompous Gentleman-
 
 
 
