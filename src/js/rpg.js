@@ -1,17 +1,17 @@
 export class Character {
-  constructor (bases, growths, health, equipment,) { 
+  constructor (bases, growths, health, equipment, xp) { 
     this.bases = bases;
     this.growths = growths;
     this.health = health;
     this.equipment = equipment;
   }
 
-  stats (growths) {
+  stats (meow) {
     for (i = 0; i < 4; i++)
     {
-      growths[i] += Math.floor(Math.random() * 15) + 5;
+      meow[i] += Math.floor(Math.random() * 15) + 5;
     }
-    return growths;
+    return meow;
   }
 
   stats2 (bases) {
@@ -85,6 +85,6 @@ export class Character {
   return char;
 }
 }
-Bob = new Character(bases, growths, health, equipment);
+Bob = new character([0, 0, 0, 0], [0, 0, 0, 0], 0, " ", 0);
 classStart("Mother", Bob);
 console.log(Bob.growths);
