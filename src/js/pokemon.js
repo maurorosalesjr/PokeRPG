@@ -4,6 +4,7 @@ export default class Pokemon {
   static getPokemon(number) {
     return new Promise(function (resolve, reject){
       let request = new XMLHttpRequest();
+      console.log("reached!");
       const url = `https://pokeapi.co/api/v2/pokemon/${number}/`
       request.onload = function () {
         if (this.status === 200) {
@@ -18,6 +19,18 @@ export default class Pokemon {
   }
   
 }
+
+
+// completed functions:
+// random pokemon calls
+
+//functions we will need
+//battle
+//level up--wip
+//loot
+//charecter selection
+//random pokemon---done
+
 //https://pokeapi.co/api/v2/pokemon?limit=1126&offset=0
 
 //stats-
@@ -29,12 +42,7 @@ export default class Pokemon {
 //HP: when you hit 0 you die (duh)
 
 
-//functions we will need
-//battle
-//level up
-//loot
-//charecter selection
-//random pokemon
+
 
 //For loot we could have 4 weapon types
 //Axes which are strong (extra damage) and heavy (lower speed)
@@ -70,18 +78,14 @@ function lootRoll (loot, enemy)
 
 //and gold(score)!
 
-//random pokemon
-//function randomPoke(diceRoll) {
-  //const pokeMap{
-  //1 : "Zapdos",
-  //2 : "pikachu",
-  //}
-//}
-//lower number rolled, harder the pokemon
+//random pokemon-
 
 
 //charecters-
 //Epicodus student- keyboard taped to a stick, laptop
+//Delivery Driver- ranged pizza slice throwing,
+//Mother- Barbarian, close range
 
 
-//
+
+
