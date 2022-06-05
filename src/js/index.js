@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../css/styles.css';
 import  Pokemon  from './pokemon.js';
+import { Character } from './rpg.js';
 
 function clearFields() {
   $('.showPoke').html("")
@@ -28,7 +29,7 @@ promise.then(function(response) {
   const body = JSON.parse(response);
 
   
-  $('.showPoke').html("<p>the pokemon you are facing is</p> " + `${body.species.name}` + `<img src="${body.sprites.front_default}"/>` + "<p> hp = </p>" + `${body.stats[0].base_stat}`);
+  $('.showPoke').html("<p>the pokemon you are facing is</p> " + `${body.species.name}` + `<img src="${body.sprites.front_default}"/>` + "<p> hp = </p>" + `${body.stats[0].base_stat}` );
     })
   })
 });

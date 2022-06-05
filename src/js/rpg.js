@@ -1,44 +1,43 @@
-function character(bases, growths, health, equipment) {
+export class Character {
+  constructor (bases, growths, health, equipment,) { 
     this.bases = bases;
     this.growths = growths;
-    this.weapons = weapons;
     this.health = health;
     this.equipment = equipment;
   }
 
-function stats (growths)
-{
-  for (i = 0; i < 4; i++)
-  {
-    growths[i] += Math.floor(Math.random() * 15) + 5;
-
+  stats (growths) {
+    for (i = 0; i < 4; i++)
+    {
+      growths[i] += Math.floor(Math.random() * 15) + 5;
+    }
+    return growths;
   }
-}
 
-function stats2 (bases)
-{
+  stats2 (bases) {
   for (i = 0; i < 4; i++)
   {
     bases[i] += Math.floor(Math.random() * 10) + 20;
+  }
+  return bases;
+}
 
+  levelUp(bases, growths) {
+  for (i = 0; i < growths.length; i++)
+  {
+      let chance = Math.floor(Math.random() * 100)
+      if (chance < growths[i])
+      {
+          bases[i] += 10;
+      }
   }
 }
 
-
-function levelUp (bases, growths)
-{
-    for (i = 0; i < growths.length; i++)
-    {
-        let chance = Math.floor(Math.random() * 100)
-        if (chance < growths[i])
-        {
-            bases[i] += 10;
-        }
-    }
-}
 //HP = 0, Strength = 1, Defense = 2, Speed = 3
-function classStart(job, char)
-{
+  classStart(job, char) {
+  let growths = [0, 0, 0, 0]
+  let bases = [0, 0, 0, 0]
+
   switch(job)
   {
   case("High School Dropout"):
@@ -85,3 +84,7 @@ function classStart(job, char)
   
   return char;
 }
+}
+Bob = new Character(bases, growths, health, equipment);
+classStart("Mother", Bob);
+console.log(Bob.growths);
