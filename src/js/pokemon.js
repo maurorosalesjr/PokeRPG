@@ -1,10 +1,10 @@
-import { holdReady } from "jquery";
+
 
 export default class Pokemon {
-  static getPokemon(name) {
+  static getPokemon(number) {
     return new Promise(function (resolve, reject){
       let request = new XMLHttpRequest();
-      const url = `https://pokeapi.co/api/v2/pokemon/${name}`
+      const url = `https://pokeapi.co/api/v2/pokemon/${number}/`
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
@@ -18,6 +18,7 @@ export default class Pokemon {
   }
   
 }
+//https://pokeapi.co/api/v2/pokemon?limit=1126&offset=0
 
 //stats-
 //hp, speed, attack, defense, starting expererince 
