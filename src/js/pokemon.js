@@ -1,11 +1,26 @@
 import { holdReady } from "jquery";
 
-export default class Example {
+export default class Pokemon {
+  static getPokemon(name) {
+    return new Promise(function (resolve, reject){
+      let request = new XMLHttpRequest();
+      const url = `https://pokeapi.co/api/v2/pokemon/${name}`
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        }else {
+          reject(request.response);
+        }
+      };
+      request.open("GET", url, true);
+      request.send();
+    });
+  }
   
 }
 
 //stats-
-//hp, speed, attack, defense
+//hp, speed, attack, defense, starting expererince 
 
 //attack could add a flat increase to the damage 
 //defense subtracts it (maybe make it so you always deal at least 1 damage though?)
@@ -18,7 +33,7 @@ export default class Example {
 //level up
 //loot
 //charecter selection
-
+//random pokemon
 
 //For loot we could have 4 weapon types
 //Axes which are strong (extra damage) and heavy (lower speed)
@@ -43,15 +58,29 @@ function lootRoll (loot, enemy)
     random(0,3)
     if(random = 0)
     {
-        random(0, 4)
+        random(0, 4) + enemy.level;
         if(random = 0)
-        
+        {
+            player.additem (loot.weapons[0])
+        }
     }
 }
 */
 
 //and gold(score)!
 
+//random pokemon
+//function randomPoke(diceRoll) {
+  //const pokeMap{
+  //1 : "Zapdos",
+  //2 : "pikachu",
+  //}
+//}
+//lower number rolled, harder the pokemon
+
+
 //charecters-
 //Epicodus student- keyboard taped to a stick, laptop
 
+
+//
