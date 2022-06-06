@@ -6,7 +6,7 @@ import  Pokemon  from './pokemon.js';
 import { Character } from './rpg.js';
 
 function clearFields() {
-  $('.showPoke').html("")
+  $('.showPoke').html("");
 }
 
 function diceRoller() {
@@ -21,15 +21,18 @@ function diceRoller() {
 
 $(document).ready(function() {
   $("#randomPoke").click(function () {
-let number = diceRoller();
-clearFields();
-let promise = Pokemon.getPokemon(number);
+    let Bob = new Character([0, 0, 0, 0], [0, 0, 0, 0], 0, " ", 0);
+    Bob.classStart("Mother", Bob);
+    console.log(Bob.growths);
+    let number = diceRoller();
+    clearFields();
+    let promise = Pokemon.getPokemon(number);
 
-promise.then(function(response) {
-  const body = JSON.parse(response);
+    promise.then(function(response) {
+      const body = JSON.parse(response);
 
   
-  $('.showPoke').html("<p>the pokemon you are facing is</p> " + `${body.species.name}` + `<img src="${body.sprites.front_default}"/>` + "<p> hp = </p>" + `${body.stats[0].base_stat}` );
-    })
-  })
+      $('.showPoke').html("<p>the pokemon you are facing is</p> " + `${body.species.name}` + `<img src="${body.sprites.front_default}" hight="100 px" width="100 px" />` + "<p> hp = </p>" + `${body.stats[0].base_stat}` );
+    });
+  });
 });

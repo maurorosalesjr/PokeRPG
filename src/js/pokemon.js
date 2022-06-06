@@ -3,7 +3,7 @@ export default class Pokemon {
     return new Promise(function (resolve, reject){
       let request = new XMLHttpRequest();
       console.log("reached!");
-      const url = `https://pokeapi.co/api/v2/pokemon/${number}/`
+      const url = `https://pokeapi.co/api/v2/pokemon/${number}/`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);

@@ -1,3 +1,12 @@
 body {
-  background-color: burlywood;
+  background-color: lightgrey;
+}
+
+.showPoke {
+  margin-left: 50%;
+  margin-right: 10%;
+}
+
+img {
+  display: block;
 }
