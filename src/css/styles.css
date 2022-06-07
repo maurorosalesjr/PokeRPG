@@ -1,12 +1,67 @@
 body {
-  background-color: lightgrey;
+  z-index: 2;
 }
 
 .showPoke {
-  margin-left: 50%;
-  margin-right: 10%;
+  margin-left: 55%;
+  margin-right: 5px;
+  margin-top: 20%;
+  z-index: 3;
+  position: relative;
+  color: red;
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+#pokemon {
+  width: 200%;
+  height: auto;
 }
 
 img {
   display: block;
+}
+
+
+#backgroundImg {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#menuBackground {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+}
+
+.menuButton {
+  z-index: 4;
+}
+
+#fightText {
+  z-index: 4;
+}
+
+#enemyStats {
+  z-index: 4;
+}
+
+#characterSheet {
+  z-index: 7;
+  display: none;
+}
+
+#randomPoke {
+  z-index: 4;
+  left: 10%;
+  top: 60%;
+  display: block;
+  float: right;
+  position: fixed;
 }

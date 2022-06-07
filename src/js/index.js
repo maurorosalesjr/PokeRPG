@@ -32,7 +32,7 @@ $(document).ready(function() {
       const body = JSON.parse(response);
 
   
-      $('.showPoke').html("<p>the pokemon you are facing is</p> " + `${body.species.name}` + `<img src="${body.sprites.front_default}" hight="100 px" width="100 px" />` + "<p> hp = </p>" + `${body.stats[0].base_stat}` );
+      $('.showPoke').html( `${body.species.name}` + `<img src="${body.sprites.front_default}" id="pokemon" />` );
     });
   });
 });
