@@ -1,4 +1,4 @@
-export class Character {
+export default class Character {
   constructor(bases, growths, health, equipment, xp) { 
     this.bases = bases;
     this.growths = growths;
@@ -25,13 +25,13 @@ export class Character {
     return bases;
   }
 
-  levelUp(a, b) {
-    for (let i = 0; i < b.length; i++)
+  levelUp() {
+    for (let i = 0; i < this.growths.length; i++)
     {
       let chance = Math.floor(Math.random() * 100);
-      if (chance < b[i])
+      if (chance < this.growths[i])
       {
-        a[i] += 10;
+        this.bases[i] += 10;
       }
     }
   }
@@ -86,6 +86,3 @@ export class Character {
     return char;
   }
 }
-let Bob = new Character([0, 0, 0, 0], [0, 0, 0, 0], 0, " ", 0);
-//this.classStart("Mother", Bob);
-console.log(Bob.growths);
