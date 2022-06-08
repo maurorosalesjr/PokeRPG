@@ -29,27 +29,66 @@ img {
   position: absolute;
   top: 10px;
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  
 }
 
 #menuBackground {
   z-index: 2;
   position: absolute;
-  width: 100%;
+  width: 90%;
   top: 0px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .menuButton {
   z-index: 4;
+  position: relative;
+  margin-left: 10%;
+}
+
+#attack {
+  margin-top:50%;
+}
+
+#healPotato {
+  margin-top: 3%;
+}
+
+#runAway {
+  margin-top: 3%;
+}
+
+#sheetButton {
+  margin-top: 3%;
 }
 
 #fightText {
   z-index: 4;
+  position: relative;
+  left: 32%;
+  margin-top: -20%;
+  border: 2px solid black;
+  height: 200px;
+  max-width: 30%;
+  display: block;
 }
+
+
 
 #enemyStats {
   z-index: 4;
+  position: relative;
+  right: -35%;
+  margin-top: -20%;
+  border: 2px solid black;
+  height: 200px;
+  max-width: 20%;
+  display: block;
 }
 
 #characterSheet {
