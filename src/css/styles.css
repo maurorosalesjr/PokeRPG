@@ -99,7 +99,6 @@ img {
 #randomPoke {
   z-index: 4;
   left: 10%;
-  top: 60%;
   display: block;
   float: right;
   position: fixed;
