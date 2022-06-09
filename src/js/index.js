@@ -19,6 +19,7 @@ import './../css/styles.css';
 
 
 
+
 $(document).ready(function() {
   $("#sheetButton").click(function() {
     $("#characterSheet").show();
