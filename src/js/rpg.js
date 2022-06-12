@@ -1,11 +1,16 @@
-export class Character {
-  constructor (bases, growths, health, equipment, xp) { 
+
+
+
+export default class Character {
+  constructor(bases, growths, health, equipment, xp) { 
     this.bases = bases;
     this.growths = growths;
     this.health = health;
     this.equipment = equipment;
     this.xp = xp;
   }
+ 
+
 
 
 
@@ -25,13 +30,13 @@ export class Character {
     return bases;
   }
 
-  levelUp(a, b) {
-    for (let i = 0; i < b.length; i++)
+  levelUp() {
+    for (let i = 0; i < this.growths.length; i++)
     {
       let chance = Math.floor(Math.random() * 100);
-      if (chance < b[i])
+      if (chance < this.growths[i])
       {
-        a[i] += 10;
+        this.bases[i] += 10;
       }
     }
   }
