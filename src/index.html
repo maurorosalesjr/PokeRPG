@@ -4,50 +4,62 @@
   <title>Pokemon RPG</title>
 </head>
 <body>
-  <img src="assets/images/dungeonwall3.jpeg" id="backgroundImg">
-  <img src="assets/images/overlay.png" id="menuBackground">
-  <div class="showPoke"></div>
-  
-  <button class="btn menuButton btn-danger" id="attack">Attack!</button><br>
-  <button class="btn menuButton btn-success" id="healPotato">Use Heal Potato!</button><br>
-  <button class="btn menuButton btn-warning" id="runAway">RUN AWAY!!!</button><br>
-  <button class="btn menuButton btn-primary" id="sheetButton">Character Sheet</button><br>
-<div class="card-deck">
-  <div class="card text-center" id="fightText">
-    <div class="card-body">
-      <p class="card-text">this is a fight test.</p>
+  <div class="container">
+    <button class="btn menuButton btn-danger" id="loadPoke">Look Around</button>
+    <img src="assets/images/dungeonwall2.jpeg" id="backgroundImg">
+    <img src="assets/images/overlay.png" id="menuBackground">
+    <div class="showPoke"></div>
+    
+    <button class="btn menuButton btn-danger" id="attack">Attack!</button><br>
+    <button class="btn menuButton btn-success" id="healPotato">Use Heal Potato!</button><br>
+    <button class="btn menuButton btn-warning" id="runAway">RUN AWAY!!!</button><br>
+    <button class="btn menuButton btn-primary" id="sheetButton">Character Sheet</button><br>
+  <div class="card-deck">
+    <div class="card text-center" id="fightText">
+      <div class="card-body">
+        <p class="card-text" id="fight"></p>
+      </div>
+    </div>
+    <div class="card text-center" id="enemyStats">
+      <div class="card-body">
+        <p class="card-text" id="enemy"></p>
+      </div>
     </div>
   </div>
-  <div class="card text-center" id="enemyStats">
-    <div class="card-body">
-      <p class="card-text">this is an enemy stat test.</p>
+    
+  <div class="card-deck" id="characterSheet">
+    <a href="#" class="closeClass" id="closeCharacterSheet">x</a>
+    <div class="card-body" id="yourStats">
+      <p class="card-text">Your Stats</p>
+    </div>
+    <div class="card-body" id="inventory">
+      <p class="card-text">Inventory</p>
+    </div>
+    <div class="card-body" id="score">
+      <p class="card-text">Your Score</p>
     </div>
   </div>
-</div>
-  
-<div class="card-deck" id="characterSheet">
-  <a href="#" class="closeClass" id="closeCharacterSheet">x</a>
-  <div class="card-body" id="yourStats">
-    <p class="card-text">Your Stats</p>
-  </div>
-  <div class="card-body" id="inventory">
-    <p class="card-text">Inventory</p>
-  </div>
-  <div class="card-body" id="score">
-    <p class="card-text">Your Score</p>
-  </div>
-</div>
 
+</div>
   
   
   <!--
   button for -attack, -use heal potato, -run away, advance text, next room, -view character sheet  
   -z index research
-  background absolute
+  background absolute-
   pokemon relative
-  menu overlays absolute
-  character sheet sticky, will need a 'x' button
+  menu overlays absolute-
+  character sheet sticky, will need a 'x' button--
   water types = auto win
+
+  connecting buttons to thier functions-
+  -have pokemon load-done
+  -battle said pokemon-mostly done
+  -defeat pokemon-done
+  -have fight box update with current fight-done
+  -have enemy stats update with each new encounter
+  -next room advancement
+  -
   -->
 </body>
 </html>

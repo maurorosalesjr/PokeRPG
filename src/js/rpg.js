@@ -1,6 +1,3 @@
-
-
-
 export default class Character {
   constructor(bases, growths, health, equipment, xp) { 
     this.bases = bases;
@@ -9,7 +6,7 @@ export default class Character {
     this.equipment = equipment;
     this.xp = xp;
   }
- 
+
 
 
 
@@ -47,40 +44,44 @@ export default class Character {
     switch(job)
     {
     case("High School Dropout"):
-      char.bases[0] += 5;
-      char.bases[3] += 5;
-      char.growths[0] += 50;
+      char.bases[1] += 20;
+      char.bases[3] += 20;
+      char.growths[1] += 50;
       char.growths[3] += 50;
       break;
     case("Scientist"):
-      char.bases[1] += 5;
-      char.bases[2] += 5;
+      char.bases[0] += 20;
+      char.bases[2] += 20;
       char.growths[1] += 50;
       char.growths[2] += 50;
       break;
     case("Epicodus Student"):
-      char.bases[0] += 5;
-      char.bases[3] += 5;
-      char.bases[3] += 5;
+      char.bases[0] += 10;
+      char.bases[1] += 10;
+      char.bases[2] += 10;
+      char.bases[3] += 10;
       char.growths[0] += 25;
-      char.growths[3] += 50;
+      char.growths[1] += 25;
+      char.growths[2] += 25;
       char.growths[3] += 25;
       break;
     case("Pompous Gentleman"):
-      char.growths[0] += 50;
-      char.growths[3] += 50;
+      char.growths[3] += 40;
+      char.growths[3] += 100;
       break;
     case("Mother"):
-      char.growths[1] += 33;
-      char.growths[2] += 34;
-      char.growths[3] += 33;
+      char.bases[1] += 20;
+      char.bases[2] += 20;
+      char.growths[1] += 50;
+      char.growths[2] += 50;
       break;
     case("Delivery Driver"):
-      char.growths[0] += 20;
-      char.growths[1] += 20;
-      char.growths[2] += 20;
-      char.growths[3] += 20;
-      char.growths[3] += 20;
+      char.bases[0] += 10;
+      char.bases[2] += 10;
+      char.bases[3] += 20;
+      char.growths[0] += 25;
+      char.growths[2] += 25;
+      char.growths[3] += 50;
       break;
     }
 

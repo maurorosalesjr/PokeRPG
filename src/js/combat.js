@@ -1,68 +1,93 @@
 export default class Combat {
 
-  
-
   static strike(str, spd, wpn, wpns, hp, enemyspd, enemydfs, enemyHP, enemystr) {
     let damage = 0;
     let speed = 0;
     let playerdead = false;
     let pokedead = false;
+    let results = [];
     
 
     damage = (str + wpn) - enemydfs;
     speed += (spd + wpns);
 
-    if(spd > enemyspd)
+    if(speed > (enemyspd + 30))
     {
-      if(spd > (enemyspd + 4))
-      {
-        enemyHP = enemyHP - damage;
-        this.checker();
-        if (pokedead === true)
-        {
-          return ("victory");
-        }
-        hp -= enemystr;
-         //playerdead = false;
-         enemyHP = enemyHP - damage;
-         this.checker();
-        if (pokedead === true)
-        {
-          return ("victory");
-        }
-      }
-      
       enemyHP = enemyHP - damage;
-      this.checker();
+      pokedead = this.checker(enemyHP, pokedead);
+      if (pokedead === true)
+      {
+        return ("victory");
+      }
+
+      hp -= enemystr;
+      playerdead = this.checker(hp, playerdead);
+      if (playerdead === true)
+      {
+        return ("defeat");
+      }
+      enemyHP = enemyHP - damage;
+      pokedead = this.checker(enemyHP, pokedead);
+      if (pokedead === true)
+      {
+        return ("victory");
+      }
+    }
+
+    else if(speed > enemyspd)
+    { 
+      enemyHP = enemyHP - damage;
+      pokedead = this.checker(enemyHP, pokedead);
       if (pokedead === true)
       {
         return ("victory");
       }
       hp -= enemystr;
+      playerdead = this.checker(hp, playerdead);
+      if (playerdead === true)
+      {
+        return ("defeat");
+      }
     }
     else {
 
       hp -= enemystr;
-        enemyHP = enemyHP - damage;
-      this.checker();
+      playerdead = this.checker(hp, playerdead);
+      if (playerdead === true)
+      {
+        return ("defeat");
+      }
+      enemyHP = enemyHP - damage;
+      pokedead = this.checker(enemyHP, pokedead);
       if (pokedead === true)
       {
         return ("victory");
       }
     }
-    console.log(str, spd, wpn, wpns, hp, enemyspd, enemydfs, enemyHP, enemystr)
-    const results = [hp, enemyHP];
+  
+    results = [hp, enemyHP];
     return results;
   }
   
 
-  static checker()
+  static checker(hp, death)
   {
-    if (this.enemyHP < 1)
+    if (hp < 1)
     {
-      this.pokedead=true;
+      death=true;
     }
-}
+    else 
+    {
+      death = false;
+    }
+    return death;
+  }
+
+  static cheapShot (hp, defense, pokemonStr)
+  {
+    hp -= (pokemonStr - defense);
+    return hp;
+  }
 }
 
 //business logic

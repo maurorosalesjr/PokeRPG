@@ -2,6 +2,11 @@ body {
   z-index: 2;
 }
 
+.container {
+  z-index: 2;
+  margin-right: 10%;
+}
+
 .showPoke {
   margin-left: 55%;
   margin-right: 5px;
@@ -52,7 +57,7 @@ img {
 }
 
 #attack {
-  margin-top:30%;
+  margin-top: 45%;
 }
 
 #healPotato {
@@ -74,7 +79,7 @@ img {
   margin-top: -20%;
   border: 2px solid black;
   height: 200px;
-  max-width: 30%;
+  max-width: 40%;
   display: block;
 }
 
@@ -87,7 +92,7 @@ img {
   margin-top: -20%;
   border: 2px solid black;
   height: 200px;
-  max-width: 20%;
+  max-width: 30%;
   display: block;
 }
 

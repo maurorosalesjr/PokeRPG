@@ -21,12 +21,10 @@ describe('Character', () => {
     bob.levelUp();
     expect(bob.bases[0]).toBeGreaterThan(0);
   });
-  test('Should punch a pokemon', () => {
+  /*test('Should punch a pokemon', () => {
 
     sarah.classStart("Mother", sarah);
     let meme;
     expect(meme = Combat.strike(sarah.bases[1], sarah.bases[2], 5, 5, sarah.bases[0], 6, 4, 80, 9)[1]).toBeLessThan(80);
-
-    
-  });
+  });*/
 });
