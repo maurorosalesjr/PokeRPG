@@ -7,10 +7,6 @@ export default class Character {
     this.xp = xp;
   }
 
-
-
-
-
   stats (growths) {
     for (let i = 0; i < 4; i++)
     {
@@ -84,9 +80,7 @@ export default class Character {
       char.growths[3] += 50;
       break;
     }
-
-
-  
+    
     this.stats(char.growths);
     this.stats2(char.bases);
     return char;

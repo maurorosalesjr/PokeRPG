@@ -49,8 +49,8 @@ export default class Combat {
         return ("defeat");
       }
     }
-    else {
-
+    else 
+    {
       hp -= enemystr;
       playerdead = this.checker(hp, playerdead);
       if (playerdead === true)
@@ -64,7 +64,6 @@ export default class Combat {
         return ("victory");
       }
     }
-  
     results = [hp, enemyHP];
     return results;
   }

@@ -5,14 +5,14 @@
 </head>
 <body>
   <div class="container">
-    <button class="btn menuButton btn-danger" id="loadPoke">Look Around</button>
-    <img src="assets/images/dungeonwall2.jpeg" id="backgroundImg">
+    <button class="btn menuButton btn-danger" id="loadPoke">Move into the next room and look around</button>
+    <img src="assets/images/dungeonwall1.jpeg" id="backgroundImg">
     <img src="assets/images/overlay.png" id="menuBackground">
     <div class="showPoke"></div>
     
     <button class="btn menuButton btn-danger" id="attack">Attack!</button><br>
     <button class="btn menuButton btn-success" id="healPotato">Use Heal Potato!</button><br>
-    <button class="btn menuButton btn-warning" id="runAway">RUN AWAY!!!</button><br>
+    <button class="btn menuButton btn-warning" id="runAway" input type="reset">RUN AWAY!!!</button><br>
     <button class="btn menuButton btn-primary" id="sheetButton">Character Sheet</button><br>
   <div class="card-deck">
     <div class="card text-center" id="fightText">
@@ -30,13 +30,13 @@
   <div class="card-deck" id="characterSheet">
     <a href="#" class="closeClass" id="closeCharacterSheet">x</a>
     <div class="card-body" id="yourStats">
-      <p class="card-text">Your Stats</p>
+      <p class="card-text">Your Stats:<span id="stats"></span></p>
     </div>
     <div class="card-body" id="inventory">
-      <p class="card-text">Inventory</p>
+      <p class="card-text">Inventory:</p>
     </div>
     <div class="card-body" id="score">
-      <p class="card-text">Your Score</p>
+      <p class="card-text">Your Score:</p>
     </div>
   </div>
 
