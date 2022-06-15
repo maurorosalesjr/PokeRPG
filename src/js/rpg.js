@@ -1,10 +1,9 @@
 export default class Character {
-  constructor(bases, growths, health, equipment, xp) { 
+  constructor(bases, growths, equipment, gold) { 
     this.bases = bases;
     this.growths = growths;
-    this.health = health;
     this.equipment = equipment;
-    this.xp = xp;
+    this.gold = gold;
   }
 
   stats (growths) {
@@ -80,7 +79,7 @@ export default class Character {
       char.growths[3] += 50;
       break;
     }
-    
+
     this.stats(char.growths);
     this.stats2(char.bases);
     return char;
