@@ -1,39 +1,44 @@
-# _{Application Name}_
+# Pokemon Battle Dungeon
 
-#### By Mauro Rosales Jr
+#### By Alex Kirkpatrick, Brett Roper, Elliot McGonigal and Mauro Rosales
 
-#### _{Brief description of application}_
+#### The App lets you explore a dungeon while battling Pokemon and gaining loot
 
 ## Technologies Used
 
 * Macbook air
+* pc
+* PokeAPI
 * Google Chrome
 * VSCode
 * Babel
 * Lint
 * Jest
 * Webpack
+* Hard work and determination
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This application pulls from Pokemon stats and sprites from PokeAPI and lets you fight them, eat a heal potato, run away if the pokemon is too stron and check you characters status
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* fork and/or clone the repo into your computer
+* if you are using a PC, in package.json navigate to the start subsection in the scripts section and change the first semi colon you see into an &
+* in terminal download the webpacks by typing in npm install
+* then type npm run build then npm run start. It will open your web browser to play the game
+* have fun!
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+By have fun i mean click the big orange button to get started. that will load a pokemon to battle. use buttons to attack, use heal potato, run away or check out your character. once the pokemon is defeated go into the next room by clicking the big orange button to load up the next pokemon.
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* with the functions commented out, non that we know of
+* with those functions, a lot
 
 ## License
+open source
 
-If you have any questions or concerns, email me at mauro.rosales247@gmail.com
-Copyright (c) _date_ Mauro Rosales Jr
+If you have any questions or concerns, email us at knibz@protonmail.com, brettroper22@gmail.com, elliot@elliotmcgonigal.com or mauro.rosales247@gmail.com
+Copyright (c) 6/15/22 by Alex Kirkpatrick, Brett Roper, Elliot McGonigal and Mauro Rosales
+
