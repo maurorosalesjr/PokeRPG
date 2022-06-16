@@ -52,12 +52,49 @@ body {
   margin-left: 10%;
 }
 
+#falseAttackButton {
+  z-index: 5;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 51%;
+  background-color: grey;
+  display: none;
+}
+
+#falseLoadPoke {
+  z-index: 5;
+  position: absolute;
+  margin-left: 38%;
+  margin-top: 45%;
+  background-color: grey;
+  display: none;
+}
+
+#falseHealButton {
+  z-index: 5;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 55%;
+  background-color: grey;
+  display: none;
+}
+
+#falseRunButton {
+  z-index: 5;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 59%;
+  background-color: grey;
+  display: none;
+}
+
 #loadPoke {
   z-index: 4;
   position: absolute;
   margin-left: 38%;
   margin-top: 45%;
-  background-color: #777777;
+  background-color: orange;
+  color: black;
 }
 
 #attack {
@@ -87,8 +124,6 @@ body {
   width: 100%;
   display: block;
 }
-
-
 
 #enemyStats {
   z-index: 4;

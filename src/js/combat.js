@@ -1,6 +1,6 @@
 export default class Combat {
 
-  static strike(str, spd, dfs, wpn, wpns, hp, enemyspd, enemydfs, enemyHP, enemystr) {
+  static strike(str, spd, dfs, wpn, wpns, hp, enemydfs, enemyspd, enemyHP, enemystr) {
     let damage = 0;
     let enemydam = 0;
     let speed = 0;
@@ -12,6 +12,8 @@ export default class Combat {
     damage = (str + wpn) - enemydfs;
     enemydam = (enemystr - dfs);
 
+    console.log(hp);
+    console.log(enemyHP);
     if (damage < 1)
     {
       damage = 1;
@@ -30,8 +32,7 @@ export default class Combat {
       {
         return ("victory");
       }
-
-      hp -= enemydam;
+      hp = hp - enemydam;
       playerdead = this.checker(hp, playerdead);
       if (playerdead === true)
       {
@@ -53,7 +54,7 @@ export default class Combat {
       {
         return ("victory");
       }
-      hp -= enemydam;
+      hp = hp - enemydam;
       playerdead = this.checker(hp, playerdead);
       if (playerdead === true)
       {
@@ -62,7 +63,7 @@ export default class Combat {
     }
     else 
     {
-      hp -= enemydam;
+      hp = hp - enemydam;
       playerdead = this.checker(hp, playerdead);
       if (playerdead === true)
       {
@@ -101,3 +102,4 @@ export default class Combat {
 }
 
 //business logic
+

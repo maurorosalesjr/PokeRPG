@@ -17,13 +17,13 @@ export default class Loot {
       returnValue = string;
       break;
     case(1):
-      returnValue = lootWeapon[Math.floor(Math.random() * 6)];
+      returnValue = lootWeapon[Math.floor(Math.random() * 7)];
       break;
     case(2):
-      returnValue = lootSideArm[Math.floor(Math.random() * 5)];
+      returnValue = lootSideArm[Math.floor(Math.random() * 6)];
       break;
     case(3):
-      returnValue = lootGold[Math.floor(Math.random() * 5)];
+      returnValue = lootGold[Math.floor(Math.random() * 6)];
       break;
     }
     returnValue = [rollOne, returnValue];

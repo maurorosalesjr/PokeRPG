@@ -1,9 +1,10 @@
 export default class Character {
-  constructor(bases, growths, equipment, gold) { 
+  constructor(bases, growths, equipment, gold, description) { 
     this.bases = bases;
     this.growths = growths;
     this.equipment = equipment;
     this.gold = gold;
+    this.description = description;
   }
 
   stats (growths) {

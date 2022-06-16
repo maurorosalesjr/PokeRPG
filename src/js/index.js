@@ -16,13 +16,37 @@ function diceRoller() {
   return rollDice;
 }
 
+function wheelOfLife ()
+{
+  let returnValue;
+  const rollOne = Math.floor(Math.random() * 4);
+    
+  switch(rollOne)
+  {
+  case(0):
+    returnValue = "High School Dropout";
+    break;
+  case(1):
+    returnValue = "Scientist";
+    break;
+  case(2):
+    returnValue = "Epicodus Student";
+    break;
+  case(3):
+    returnValue = "Pompous Gentleman";
+    break;
+  }
+  return returnValue;
+}
+
 function stab (player, pokemonStr, pokemonSpd, pokemonDfs, playerHP, pokemonHP) {
-  let outcome = Combat.strike(player.bases[1], player.bases[2], player.bases[3], player.equipment[0], player.equipment[1], playerHP, pokemonDfs, pokemonSpd, pokemonHP, pokemonStr);
+  let outcome = Combat.strike(player.bases[1], player.bases[3], player.bases[2], player.equipment[0], player.equipment[1], playerHP, pokemonDfs, pokemonSpd, pokemonHP, pokemonStr);
   return outcome;
 }
 
 function healPotato (hp, player, pokeStr)
 {
+  console.log(pokeStr);
   hp = Combat.cheapShot(hp, player.bases[2], pokeStr);
   if (hp < 1)
   {
@@ -41,46 +65,52 @@ function prize(winnings, player)
   {
   case(0):
     player.levelUp();
-    console.log("You leveled up! Your stats are now " + player.bases + " !");
+    player.description = ("You leveled up! Your stats are now " + player.bases[0] + " HP, " + player.bases[1] + " ATTACK, " + player.bases[2] + " DEFENSE, " + player.bases[3] + " SPEED!");
     break;
   case(1):
     if (winnings[1] > player.equipment[0])
     {
       player.equipment[0] = winnings[1];
-      console.log("You find a new keyboard! It lets you do " + player.equipment[0] + " extra damage!");
+      player.description = ("You find a new keyboard! It lets you do " + player.equipment[0] + " extra damage!");
     }
     else
     {
-      console.log("You don't find anything worth keeping");
+      player.description = ("You don't find anything worth keeping");
     }
     break;
   case(2):
     if (winnings[1] > player.equipment[1])
     {
       player.equipment[1] = winnings[1];
-      console.log("You find a new mouse! It lets attack with " + player.equipment[1] + " extra speed!");
+      player.description = ("You find a new mouse! It lets attack with " + player.equipment[1] + " extra speed!");
     }
     else
     {
-      console.log("You don't find anything worth keeping");
+      player.description = ("You don't find anything worth keeping");
     }
     break;
   case(3):
     player.gold += winnings[1];
-    console.log("You find " + winnings[1] + "Gold! \n You now have " + player.gold + " gold!");
+    player.description = ("You find " + winnings[1] + "Gold! \n You now have " + player.gold + " gold!");
     break;
   }
   return player;
 }
 
 
-//HP = 0, Strength = 1, Defense = 2, Speed = 3
+//HP = 0, Strength = 1, Defense = 2, Speed = 3 Hello World! Testing testing blah blah blah
 
 $(document).ready(function() {
-  let player; 
-  player = new Character([100, 30, 20, 30], [0, 0, 0, 0], [5, 5], 0);
-  player = player.classStart("Epicodus Student", player); 
+  //let corpsePile = 0;
+  let player;
+  let occupation = wheelOfLife();
+  player = new Character([120, 40, 20, 10], [0, 0, 0, 0], [5, 5], 0, " ");
+  player = player.classStart(occupation, player); 
   $("#loadPoke").click(function () {
+    $('#falseAttackButton').hide();
+    $('#falseHealButton').hide();
+    $('#falseRunButton').hide();
+    $('#falseLoadPoke').show();
     let number = diceRoller();  
     clearFields();
     let promise = Pokemon.getPokemon(number);
@@ -93,22 +123,25 @@ $(document).ready(function() {
       $('.showPoke').html( `<img src="${body.sprites.front_default}" id="pokemon" />` );
       
       let hpArray = [player.bases[0],  `${body.stats[0].base_stat}`];
-      console.log( `${body.stats[0].base_stat}`);
       $("#attack").click(function() {
         hpArray = stab(player, `${body.stats[1].base_stat}`, `${body.stats[5].base_stat}`, `${body.stats[2].base_stat}`, hpArray[0], hpArray[1]);
-        console.log(hpArray[1]);
+        console.log(hpArray);
         if (hpArray === "victory") 
         {
+          //corpsePile += 1;
           prize(Loot.lootRoll(), player);
-          $('#fight').html("<p>Victory! You defeated " + `${body.species.name}`.charAt(0).toUpperCase() + `${body.species.name}`.slice(1) + "! You should look around for more Pokemon. <br> Your remaining HP is: </p>" + player.bases[0]);
-        } 
-        else if (hpArray === "defeat") 
-        {
+          $('#fight').html("<p>Victory! You defeated " + `${body.species.name}`.charAt(0).toUpperCase() + `${body.species.name}`.slice(1) + "! You should look around for more Pokemon. <br> Your remaining HP is: </p>" + player.bases[0] + "<p>" + player.description + "</p>");
+          $('#falseLoadPoke').hide();
+        } else if (hpArray === "defeat") {
           $('#fight').html("You have been defeated! Please try again!");
-        } 
-        else 
-        {
+          // $('#falseAttackButton').show();
+          // $('#falseRunButton').show();
+          // $('#falseHealButton').show();
+          // console.log("defeat");
+          //corpsePile = 0;
+        } else {
           $('#fight').html("<p> " + `${body.species.name}`.charAt(0).toUpperCase() + `${body.species.name}`.slice(1) + " remaining HP: " + hpArray[1] + "<br>" + "Your remaining HP: " + hpArray[0] + "</p>");
+          console.log("Keep fighting");
         }
       });
 
@@ -117,28 +150,27 @@ $(document).ready(function() {
         if (hpArray[0] === "defeat") {
           $('#fight').html("You have been defeated! Please try again!");
         } else {
-          $('#fight').html("<p>You have reached into your Potato Bag of Holding and consumed a Heal Potato, giving you all the HP!</p>");
+          $('#fight').html("<br>You have reached into your Potato Bag of Holding and consumed a Heal Potato, healing you back up to " + hpArray[0] + " hp");
         }
       });
 
       $("#runAway").click(function () {
         $('.showPoke').html("");
         $('#fight').html("<p>You have run away like a coward! I guess that pokemon was too strong! Look around for another pokemon, if you dare!</p>");
-
+        $('#falseAttackButton').show();
+        $('#falseRunButton').show();
+        $('#falseLoadPoke').hide();
       });
 
       $("#sheetButton").click(function() {
         $("#characterSheet").show();
-        $("#stats").html("<p>Epicodus Student" + "<br>" + "HP: " + player.bases[0] + "<br>" + "Strength: " + player.bases[1] + "<br>" + "Defense: " + player.bases[2] + "<br>" + "Speed: " + player.bases[3]);
-        $('#score').html("<p>" + player.gold + " points </p>");
+        $("#stats").html("<p>Character Class: " + occupation + "<br>" + "HP: " + player.bases[0] + "<br>" + "Strength: " + player.bases[1] + "<br>" + "Defense: " + player.bases[2] + "<br>" + "Speed: " + player.bases[3]);
+        $('#score').html("<p>" + player.gold + " gold </p>");
         $('#equipment').html("<p>plus " + player.equipment[0] + " keyboard power" + "<br>" + "plus " + player.equipment[1] + " mouse speed" );
       });
       $("#closeCharacterSheet").click(function() {
         $("#characterSheet").hide();
       });
-    
-      
-
     });
   });
 });
